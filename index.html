@@ -56,6 +56,51 @@
       border-top: 1px solid #eceff3;
     }
 
+    .table-block {
+      background: #fff;
+      border: 1px solid #dfe3e8;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      padding: 12px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    th,
+    td {
+      border: 1px solid #e2e6ea;
+      padding: 10px;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    th {
+      background: #f2f5f8;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: left;
+      white-space: normal;
+    }
+
     @media (max-width: 760px) {
       .figure-row {
         grid-template-columns: 1fr;
@@ -68,25 +113,170 @@
     <section class="figure-row">
       <figure>
         <img src="images/Fig1.PNG" alt="Inference-time token entropy of Self Forcing" />
-        <figcaption>Fig. 1 caption is Inference-time token entropy of Self Forcing.</figcaption>
+        <figcaption><strong>Fig. 1: Inference-time token entropy of Self Forcing.</strong> The y-axis denotes the sampled token position and the x-axis represents the chunk order</figcaption>
       </figure>
 
       <figure>
         <img src="images/Fig2.PNG" alt="Inference-time token entropy of Block Forcing" />
-        <figcaption>Fig. 2 is Inference-time token entropy of Block Forcing.</figcaption>
+        <figcaption><strong>Fig. 2: Inference-time token entropy of Block Forcing.</strong> The y-axis denotes the sampled token position and the x-axis represents the chunk order</figcaption>
       </figure>
     </section>
 
     <section class="figure-row">
       <figure>
         <img src="images/fig3.jpg" alt="Training-time token entropy of Self Forcing" />
-        <figcaption>Fig 3. is Training-time token entropy of Self Forcing.</figcaption>
+        <figcaption><strong>Fig. 3: Training-time token entropy of Self Forcing.</strong> The y-axis denotes the sampled token position and the x-axis represents the training step.</figcaption>
       </figure>
 
       <figure>
         <img src="images/fig4.jpg" alt="Training-time token entropy of Block Forcing" />
-        <figcaption>Fig. 4 is Training-time token entropy of Block Forcing.</figcaption>
+        <figcaption><strong>Fig. 4: Training-time token entropy of Block Forcing.</strong> The y-axis denotes the sampled token position and the x-axis represents the training step.</figcaption>
       </figure>
+    </section>
+
+    <section class="table-block">
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Table 1. More recent baselines on VBench benchmark with extension to 60 seconds
+          </caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Subject Consistency ↑</th>
+              <th>Background Consistency ↑</th>
+              <th>Motion Smoothness ↑</th>
+              <th>Dynamic Degree ↑</th>
+              <th>Aesthetic Quality ↑</th>
+              <th>Image Quality ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Self Forcing++</td>
+              <td>0.9165</td>
+              <td>0.9092</td>
+              <td>0.9803</td>
+              <td>0.5865</td>
+              <td>0.5482</td>
+              <td>0.6453</td>
+            </tr>
+            <tr>
+              <td>Rolling Forcing</td>
+              <td>0.9409</td>
+              <td>0.9447</td>
+              <td>0.9865</td>
+              <td>0.6600</td>
+              <td>0.6350</td>
+              <td>0.6442</td>
+            </tr>
+            <tr>
+              <td>Deep Forcing</td>
+              <td>0.9285</td>
+              <td>0.9136</td>
+              <td>0.9819</td>
+              <td>0.7035</td>
+              <td>0.6041</td>
+              <td>0.6455</td>
+            </tr>
+            <tr>
+              <td>StreamDiffusionV2</td>
+              <td>0.9036</td>
+              <td>0.9051</td>
+              <td>0.9745</td>
+              <td>0.4552</td>
+              <td>0.5547</td>
+              <td>0.5528</td>
+            </tr>
+            <tr>
+              <td>LongLive</td>
+              <td>0.9403</td>
+              <td>0.9495</td>
+              <td>0.9845</td>
+              <td>0.7321</td>
+              <td>0.5795</td>
+              <td>0.6483</td>
+            </tr>
+            <tr>
+              <td>Infinity-RoPE</td>
+              <td>0.9352</td>
+              <td>0.9395</td>
+              <td>0.9710</td>
+              <td>0.5395</td>
+              <td><strong>0.6045</strong></td>
+              <td>0.6475</td>
+            </tr>
+            <tr>
+              <td><strong>BlockVid</strong></td>
+              <td><strong>0.9410</strong></td>
+              <td><strong>0.9650</strong></td>
+              <td><strong>0.9870</strong></td>
+              <td><strong>0.7720</strong></td>
+              <td>0.5839</td>
+              <td><strong>0.6527</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="table-block">
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Table 2. Extra backbones with HunyuanVideo-1.5-480P-T2V on on VBench benchmark with extension to 60 seconds.
+          </caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Subject Consistency ↑</th>
+              <th>Background Consistency ↑</th>
+              <th>Motion Smoothness ↑</th>
+              <th>Dynamic Degree ↑</th>
+              <th>Aesthetic Quality ↑</th>
+              <th>Image Quality ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Self Forcing (HunyuanVideo 1.5 480p)</td>
+              <td>0.8136</td>
+              <td>0.8091</td>
+              <td>0.8254</td>
+              <td>0.3365</td>
+              <td>0.4750</td>
+              <td>0.5523</td>
+            </tr>
+            <tr>
+              <td>LongLive (HunyuanVideo 1.5 480p)</td>
+              <td>0.8442</td>
+              <td>0.8119</td>
+              <td>0.8375</td>
+              <td>0.4890</td>
+              <td>0.4795</td>
+              <td>0.5780</td>
+            </tr>
+            <tr>
+              <td><strong>BlockVid (HunyuanVideo 1.5 480p)</strong></td>
+              <td><strong>0.8651</strong></td>
+              <td><strong>0.8359</strong></td>
+              <td><strong>0.8562</strong></td>
+              <td><strong>0.5021</strong></td>
+              <td><strong>0.4881</strong></td>
+              <td><strong>0.5805</strong></td>
+            </tr>
+            <tr>
+              <td>BlockVid (Wan 2.1 5B 480p)</td>
+              <td>0.9410</td>
+              <td>0.9650</td>
+              <td>0.9870</td>
+              <td>0.7720</td>
+              <td>0.5839</td>
+              <td>0.6527</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 </body>
