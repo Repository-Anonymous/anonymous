@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Token Entropy Figures</title>
+  <style>
+    :root {
+      --page-max-width: 1100px;
+      --gap: 24px;
+      --caption-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+
+    .container {
+      max-width: var(--page-max-width);
+      margin: 0 auto;
+      display: grid;
+      gap: var(--gap);
+    }
+
+    .figure-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--gap);
+    }
+
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid #dfe3e8;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+
+    figcaption {
+      padding: 12px 14px;
+      font-size: var(--caption-size);
+      line-height: 1.4;
+      text-align: center;
+      border-top: 1px solid #eceff3;
+    }
+
+    @media (max-width: 760px) {
+      .figure-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="figure-row">
+      <figure>
+        <img src="images/Fig1.PNG" alt="Inference-time token entropy of Self Forcing" />
+        <figcaption>Fig. 1 caption is Inference-time token entropy of Self Forcing.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Fig2.PNG" alt="Inference-time token entropy of Block Forcing" />
+        <figcaption>Fig. 2 is Inference-time token entropy of Block Forcing.</figcaption>
+      </figure>
+    </section>
+
+    <section class="figure-row">
+      <figure>
+        <img src="images/fig3.jpg" alt="Training-time token entropy of Self Forcing" />
+        <figcaption>Fig 3. is Training-time token entropy of Self Forcing.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/fig4.jpg" alt="Training-time token entropy of Block Forcing" />
+        <figcaption>Fig. 4 is Training-time token entropy of Block Forcing.</figcaption>
+      </figure>
+    </section>
+  </main>
+</body>
+</html>
