@@ -337,6 +337,168 @@
       </div>
     </section>
 
+    <section class="table-block">
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Table 4. User study. The alignment between LV-Bench scores and human annotations. For each evaluation dimension and each video generation model, we report results in the format: <strong>"LV-Bench Win Ratio (left) / Human Win Ratio (right)"</strong>.
+          </caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Subject</th>
+              <th>Background</th>
+              <th>Motion</th>
+              <th>Aesthetic</th>
+              <th>Clarity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MAGI-1</td>
+              <td>41.5 / 42.3</td>
+              <td>44.2 / 43.1</td>
+              <td>40.8 / 41.6</td>
+              <td>46.9 / 45.7</td>
+              <td>43.7 / 44.5</td>
+            </tr>
+            <tr>
+              <td>Self Forcing</td>
+              <td>48.6 / 47.2</td>
+              <td>52.1 / 50.8</td>
+              <td>47.5 / 46.1</td>
+              <td>49.3 / 50.0</td>
+              <td>45.2 / 46.3</td>
+            </tr>
+            <tr>
+              <td>PAVDM</td>
+              <td>53.4 / 52.0</td>
+              <td>50.2 / 49.1</td>
+              <td>55.1 / 53.8</td>
+              <td>48.6 / 47.9</td>
+              <td>52.7 / 51.5</td>
+            </tr>
+            <tr>
+              <td>FramePack</td>
+              <td>56.8 / 55.4</td>
+              <td>54.9 / 53.6</td>
+              <td>52.0 / 50.9</td>
+              <td>57.2 / 56.1</td>
+              <td>49.8 / 48.6</td>
+            </tr>
+            <tr>
+              <td>SkyReels-V2-DF-1.3B</td>
+              <td>58.1 / 56.9</td>
+              <td>57.5 / 56.2</td>
+              <td>41.9 / 43.0</td>
+              <td>56.4 / 55.1</td>
+              <td>54.2 / 53.0</td>
+            </tr>
+            <tr>
+              <td><strong>BlockVid-1.3B (Ours)</strong></td>
+              <td><strong>59.2 / 58.0</strong></td>
+              <td><strong>58.7 / 57.4</strong></td>
+              <td><strong>56.5 / 55.2</strong></td>
+              <td><strong>55.8 / 56.3</strong></td>
+              <td><strong>57.1 / 55.9</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="table-block">
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Table 5. Ablation on τ&gt;0.9, with (τ = 0.98) achieving the best overall trade-off.
+          </caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>VDE Subject ↓</th>
+              <th>VDE Background ↓</th>
+              <th>VDE Motion ↓</th>
+              <th>VDE Aesthetic ↓</th>
+              <th>VDE Clarity ↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Semantic Sparse KV (τ = 0.97)</td>
+              <td>0.0869</td>
+              <td>0.2988</td>
+              <td>0.0153</td>
+              <td>0.9684</td>
+              <td>0.7570</td>
+            </tr>
+            <tr>
+              <td>Semantic Sparse KV (τ = 0.98)</td>
+              <td>0.0844</td>
+              <td><strong>0.2945</strong></td>
+              <td>0.0119</td>
+              <td><strong>0.9618</strong></td>
+              <td><strong>0.7551</strong></td>
+            </tr>
+            <tr>
+              <td>Semantic Sparse KV (τ = 0.99)</td>
+              <td><strong>0.0841</strong></td>
+              <td>0.2960</td>
+              <td><strong>0.0114</strong></td>
+              <td>0.9635</td>
+              <td>0.7563</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="table-block">
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Table 6. Ablation on γ, which controls the <strong>strength of Block Forcing</strong>.
+          </caption>
+          <thead>
+            <tr>
+              <th>Method (γ)</th>
+              <th>VDE Subject ↓</th>
+              <th>VDE Background ↓</th>
+              <th>VDE Motion ↓</th>
+              <th>VDE Aesthetic ↓</th>
+              <th>VDE Clarity ↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>γ = 0.3</td>
+              <td>0.0852</td>
+              <td>0.2971</td>
+              <td>0.0126</td>
+              <td>0.9630</td>
+              <td>0.7568</td>
+            </tr>
+            <tr>
+              <td>γ = 0.5</td>
+              <td><strong>0.0844</strong></td>
+              <td>0.2945</td>
+              <td><strong>0.0119</strong></td>
+              <td><strong>0.9618</strong></td>
+              <td><strong>0.7551</strong></td>
+            </tr>
+            <tr>
+              <td>γ = 0.7</td>
+              <td>0.0850</td>
+              <td><strong>0.2943</strong></td>
+              <td>0.0123</td>
+              <td>0.9627</td>
+              <td>0.7560</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section>
       <figure>
         <img src="images/Fig5a.jpg" alt="Fig5a video storyboard scene" />
